@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -36,6 +37,18 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.room.runtime) {
+        exclude(group = "com.intellij", module = "annotations")
+    }
+    implementation(libs.androidx.room.compiler) {
+        exclude(group = "com.intellij", module = "annotations")
+    }
+
+    kapt(libs.androidx.room.compiler)
+
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.converter.gson)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
