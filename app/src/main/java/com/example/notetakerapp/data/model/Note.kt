@@ -1,11 +1,10 @@
-package com.example.notetakerapp
+package com.example.notetakerapp.data.model
 
 import androidx.room.Database
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverter
-import retrofit2.Converter
+import com.example.notetakerapp.data.local.NoteDao
 
 
 @Entity

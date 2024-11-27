@@ -1,10 +1,15 @@
-package com.example.notetakerapp
+package com.example.notetakerapp.ui.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.notetakerapp.R
+import com.example.notetakerapp.data.model.Note
+import com.example.notetakerapp.ui.viewmodel.NoteViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +21,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var notes: List<Note>
+        val viewModel:NoteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
+        viewModel.allNotes.observe(this, Observer {
+            notes = it
+            //update the adapter
+        })
+        viewModel.refreshNotes()
     }
 }
