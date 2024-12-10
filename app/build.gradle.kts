@@ -45,6 +45,7 @@ dependencies {
     }
 
     kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     implementation(libs.retrofit)
     implementation(libs.gson)
@@ -55,7 +56,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.lifecycle)
+    implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.workmanager)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
