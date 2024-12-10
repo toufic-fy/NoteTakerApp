@@ -2,7 +2,6 @@ package com.example.notetakerapp.data.local
 
 import android.content.Context
 import androidx.room.Room
-import com.example.notetakerapp.data.model.NoteDatabase
 
 object DatabaseProvider {
     @Volatile //This annotation ensures that changes to db_instance are immediately visible to all threads.
